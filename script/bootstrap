@@ -1,0 +1,21 @@
+#!/bin/bash
+
+if ! which php > /dev/null # checks for php
+then
+  echo "You need to install php 5.4"
+  exit
+fi
+
+php composer.phar install # install dependencies with composer
+
+function sf() {
+  php app/console $*
+}
+
+sf doctrine:database:drop --force # drop database
+sf doctrine:schema:create # create database schema
+
+sf fos:user:create
+
+read -p "Repeate username: " username
+sf fos:user:promote $username --super
