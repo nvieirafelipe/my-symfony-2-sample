@@ -1,8 +1,8 @@
 {
-    "name": "symfony/framework-standard-edition",
+    "name": "My Symfony 2 Sample",
     "license": "MIT",
     "type": "project",
-    "description": "The \"Symfony Standard Edition\" distribution",
+    "description": "My Symfony 2 Sample",
     "autoload": {
         "psr-0": { "": "src/" }
     },
